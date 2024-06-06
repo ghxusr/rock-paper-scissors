@@ -78,11 +78,11 @@ function playGame() {
         }
     }
 
-    for (let i = 0; i < 5; i++) {
+    /*for (let i = 0; i < 5; i++) {
         let humanSelection = getHumanChoice();
         let computerSelection = getComputerChoice();
         console.log(playRound(humanSelection, computerSelection) + "\nScore" + "\nYou : " + humanScore + "\nComputer : " + computerScore);
-    }
+    }*/
 }
 
 playGame();
