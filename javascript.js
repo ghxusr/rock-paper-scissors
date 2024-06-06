@@ -11,16 +11,6 @@ function getComputerChoice() {
     else return "scissors";
 }
 
-function getHumanChoice() {
-    let input = ""
-    do {
-        input = (prompt("Please enter your choice between rock paper scissors")).toLowerCase();
-    }
-    while ((input != "rock") && (input != "paper") && (input != "scissors"));
-    
-    return input;
-}
-
 let humanScore = 0;
 let computerScore = 0;
 
@@ -77,23 +67,58 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+let roundResult = "";
+
 const rockButton = document.querySelector("#rock-button");
 
 rockButton.addEventListener("click", () => {
     let computerSelection = getComputerChoice();
-    console.log(playRound("rock", computerSelection) + "\nScore" + "\nYou : " + humanScore + "\nComputer : " + computerScore);
+    roundResult = playRound("rock", computerSelection) + "<br>" + "Score" + "<br>" + "You : " + humanScore + "<br>" + "Computer : " + computerScore;
+    if (humanScore === 5) {
+        roundResult = "You won the game!" + "<br>" + "Score" + "<br>" + "You : " + humanScore + "<br>" + "Computer : " + computerScore;
+        humanScore = 0;
+        computerScore = 0;
+    }
+    else if (computerScore === 5) {
+        roundResult = "You lost the game!" + "<br>" + "Score" + "<br>" + "You : " + humanScore + "<br>" + "Computer : " + computerScore;
+        humanScore = 0;
+        computerScore = 0;
+    }
+    document.getElementById("round-result").innerHTML = roundResult; 
 });
 
 const paperButton = document.querySelector("#paper-button");
 
 paperButton.addEventListener("click", () => {
     let computerSelection = getComputerChoice();
-    console.log(playRound("paper", computerSelection) + "\nScore" + "\nYou : " + humanScore + "\nComputer : " + computerScore);
+    roundResult = playRound("paper", computerSelection) + "<br>" + "Score" + "<br>" + "You : " + humanScore + "<br>" + "Computer : " + computerScore;
+    if (humanScore === 5) {
+        roundResult = "You won the game!" + "<br>" + "Score" + "<br>" + "You : " + humanScore + "<br>" + "Computer : " + computerScore;
+        humanScore = 0;
+        computerScore = 0;
+    }
+    else if (computerScore === 5) {
+        roundResult = "You lost the game!" + "<br>" + "Score" + "<br>" + "You : " + humanScore + "<br>" + "Computer : " + computerScore;
+        humanScore = 0;
+        computerScore = 0;
+    }
+    document.getElementById("round-result").innerHTML = roundResult; 
 });
 
 const scissorsButton = document.querySelector("#scissors-button");
 
 scissorsButton.addEventListener("click", () => {
     let computerSelection = getComputerChoice();
-    console.log(playRound("scissors", computerSelection) + "\nScore" + "\nYou : " + humanScore + "\nComputer : " + computerScore);
+    roundResult = playRound("scissors", computerSelection) + "<br>" + "Score" + "<br>" + "You : " + humanScore + "<br>" + "Computer : " + computerScore;
+    if (humanScore === 5) {
+        roundResult = "You won the game!" + "<br>" + "Score" + "<br>" + "You : " + humanScore + "<br>" + "Computer : " + computerScore;
+        humanScore = 0;
+        computerScore = 0;
+    }
+    else if (computerScore === 5) {
+        roundResult = "You lost the game!" + "<br>" + "Score" + "<br>" + "You : " + humanScore + "<br>" + "Computer : " + computerScore;
+        humanScore = 0;
+        computerScore = 0;
+    }
+    document.getElementById("round-result").innerHTML = roundResult; 
 });
